@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>Home</title>
+		<link rel="icon" href="images/favicon.ico">
+		<link rel="shortcut icon" href="images/favicon.ico" />
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/zerogrid.css" >
+		<link rel="stylesheet" href="css/camera.css">
+		<link rel="stylesheet" href="css/form.css">
+		<link rel="stylesheet" href="css/responsive.css">
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery-migrate-1.1.1.js"></script>
+		<script src="js/superfish.js"></script>
+		<script src="js/forms.js"></script>
+		<script src="js/jquery.ui.totop.js"></script>
+		<script src="js/jquery.equalheights.js"></script>
+		<script src="js/jquery.easing.1.3.js"></script>
+		<script src="js/jquery.ui.totop.js"></script>
+		<script src="js/tms-0.4.1.js"></script>
+		<script src="js/css3-mediaqueries.js"></script>
+		<script>
+			$(document).ready(function(){
+				$('.slider_wrapper')._TMS({
+					show:0,
+					pauseOnHover:false,
+					prevBu:'.prev',
+					nextBu:'.next',
+					playBu:false,
+					duration:800,
+					preset:'fade',
+					pagination:true,//'.pagination',true,'<ul></ul>'
+					pagNums:false,
+					slideshow:8000,
+					numStatus:false,
+					banners: 'fade',
+					waitBannerAnimation:false,
+					progressBar:false
+				});
+			});
+			$(document).ready(function(){
+				!function(){
+			var map=[]
+			 ,names=[]
+			 ,win=$(window)
+			 ,header=$('header')
+			 ,currClass
+			$('.content').each(function(n){
+			 map[n]=this.offsetTop
+			 names[n]=$(this).attr('id')
+			})
+			win
+			 .on('scroll',function(){
+				var i=0
+				while(map[i++]<=win.scrollTop());
+				if(currClass!==names[i-2])
+				currClass=names[i-2]
+				header.removeAttr("class").addClass(names[i-2])
+			 })
+			}(); });
+					function goToByScroll(id){
+				$('html,body').animate({scrollTop: $("#"+id).offset().top},'slow');
+				}
+				$(document).ready(function(){
+					$().UItoTop({ easingType: 'easeOutQuart' });
+				});
+		</script>
+		<!--[if lt IE 8]>
+			<div style=' clear: both; text-align:center; position: relative;'>
+				<a href="http//windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+					<img src="http//storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+				</a>
+			</div>
+		<![endif]-->
+		<!--[if lt IE 9]>
+			<script src="js/html5shiv.js"></script>
+			<link rel="stylesheet" media="screen" href="css/ie.css">
+		<![endif]-->
+	</head>
+	<body class="">
+<!--==============================header=================================-->
+		<header class="page1">
+			<div class="zerogrid">
+				<div class="col-full">
+					<div class="wrap-col">
+						<div class="menu_block">
+							<nav class="">
+								<ul class="sf-menu">
+									<li class="current men"><a onClick="goToByScroll('page1'); return false;" href="#">主页 </a> <strong class="hover"></strong></li>
+									<li class="men1"><a onClick="goToByScroll('page2'); return false;" href="#">期刊介绍</a><strong class="hover"></strong></li>
+									<li class=" men2"><a onClick="goToByScroll('page3'); return false;" href="#">科协记事&nbsp;</a> <strong class="hover"></strong></li>
+									<li class=" men3"><a onClick="goToByScroll('page4'); return false;" href="#">闲情雅致&nbsp;</a> <strong class="hover"></strong></li>
+									<li class=" men4"><a onClick="goToByScroll('page5'); return false;" href="#">关于我们</a> <strong class="hover"></strong></li>
+								</ul>
+							</nav>
+							<div class="clear"></div>
+						</div>
+						<h1><a href="#" onClick="goToByScroll('page1'); return false;"><img src="images/logo.png" alt="Gerald Harris attorney at law"></a></h1>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</header>
+<!--=======content================================-->
+		<div id="page1" class="content">
+			<div class="zerogrid">
+				<div class="col-full">
+					<div class="wrap-col">
+						<div class="slider_wrapper">
+							<ul class="items">
+								<li>
+									<img src="images/spacer.gif" alt="">
+									<div class="caption banner">
+										<h2>求是诠释质疑，创新迎接挑战</h2>
+									</div>
+								</li>
+								<li>
+									<img src="images/spacer.gif" alt="">
+									<div class="caption banner">
+										<h2>欢迎来到《退订请回复SAST》</h2>
+									</div>
+								</li>
+								<li>
+									<img src="images/spacer.gif" alt="">
+									<div class="caption banner">
+										<h2>今天过的怎么样呀?</h2>
+									</div>
+								</li>
+								<li>
+									<img src="images/spacer.gif" alt="">
+									<div class="caption banner">
+										<h2>记得天天开心！</h2>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="image-row">
+							<img src="../../../../../SAST_1/H6/images/bgs.png" alt="Image 1">
+							<img src="../../../../../SAST_1/H6/images/llb.png" alt="Image 2">
+							<img src="../../../../../SAST_1/H6/images/xmb.png" alt="Image 3">
+							<img src="../../../../../SAST_1/H6/images/ssb.png" alt="Image 4">
+							<img src="../../../../../SAST_1/H6/images/xcb.png" alt="Image 5">
+							<img src="../../../../../SAST_1/H6/images/xmtb.png" alt="Image 6">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="page2" class="content">
+			<div class="zerogrid">
+				<div class="col-full">
+					<div class="wrap-col">
+						<div class="slogan">
+							<h3>先来介绍一下吧~</h3>
+							<div class="content1">
+    							<p>嘿，你知道吗？大科协有超酷的“年鉴”，把一年的工作成果都好好收着。可有一天，不知道谁脑子突然蹦出个“月鉴”的点子，这不，就有了现在每月和大家见面的期刊啦【退订请回复 SAST】。</p>
+    							<p>这期刊可不像年鉴那么正儿八经、一脸严肃哦，它就像是大科协自家超有趣的论坛，是那种鲜活灵动、属于每一个成员的“慢讯”小天地。你可以拿它下饭，上厕所时也能随手翻翻，是不是超棒？</p>
+    							<p>等到你把它看完了，回复 SAST 就行啦。</p>
+							</div>
+							<img src="../../../../../SAST_1/H6/images/guodu.gif">
+							<div class="content1">
+							  <p>期刊里都有啥呢？有当月科协那些值得说道的<a onClick="goToByScroll('page3'); return false;" href="#"><em>大事</em></a>，还有成员们工作时冒出来的<a onClick="goToByScroll('page4'); return false;" href="#"><em>趣事</em></a>，就连大家平常学习生活里想和伙伴分享的事儿也都在里面哦。
+								</p>
+								
+								<p>这可是“退订”的第一期，也就是 10、11 月的创刊号哟。“退订”每月月初准时光临，里面讲的事儿都是前一个月的。要是你也手痒痒，想在期刊里露一手，那就赶紧找联络员投稿吧！视频、图片、文字、聊天记录、录音啥的，统统都欢迎，就等你来啦！🥰
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="page3" class="content">
+			<div class="zerogrid">
+				<div class="col-full">
+					<div class="wrap-col">
+						<div class="slogan">
+							<h3><b>大科协记事</b></h3>
+							<div class="content1">
+								<p>求是诠释质疑，创新迎接挑战。</p>
+								<p>在大科协这个忙碌的大家庭里，咱的日子那可真是丰富又充实！大科协记事是《退订请回复SAST》的主板块，本期主要记录在10月和11月的日子里，我们都做了哪些重大工作，同学们又得到了哪些收获。我们期望通过这样的记录，让大家更加深刻的了解大科协的工作内容。好啦，闲话少叙，赶紧和我瞅瞅本月大科协都发生了哪些重要的事情吧！
+								</p>
+							</div>
+							<div class="image-row">
+							<img src="images/guodu2.gif" alt="Image 1">
+							<img src="images/guodu2.gif" alt="Image 1">
+							<img src="images/guodu2.gif" alt="Image 1">
+							<img src="images/guodu2.gif" alt="Image 1">
+							<img src="images/guodu2.gif" alt="Image 1">
+							<img src="images/guodu2.gif" alt="Image 1">
+						</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-1-4">
+					<div class="wrap-col">
+						<div class="box maxheight1">
+							<img src="images/box1_img3.png" alt="">
+							<div class="text1"><a href="welcomenew.html" target="_blank">大科协招新</a></div>
+							号外！大科协宇宙又添新成员，98颗小卫星成功发射！
+						</div>
+					</div>
+				</div>
+				<div class="col-1-4">
+					<div class="wrap-col">
+						<div class="box maxheight1">
+							<img src="images/box1_img4.png" alt="">
+							<div class="text1"><a href="allmeeting.html" target="_blank">全体大会</a></div>大科协全体大会隆重召开，星际新老成员的首次集结，精彩瞬间，不容错过！
+						</div>
+					</div>
+				</div>
+				<div class="col-1-4">
+					<div class="wrap-col">
+						<div class="box maxheight1">
+							<img src="images/box1_img2.png" alt="">
+							<div class="text1"><a href="playplay.html" target="_blank">素质拓展</a></div>新成员们抖擞精神，踏上了西游取经路。小心！铁扇公主拿着芭蕉扇追来啦！
+						</div>
+					</div>
+				</div>
+				<div class="col-1-4">
+					<div class="wrap-col">
+						<div class="box maxheight1">
+							<img src="images/box1_img5.png" alt="">
+							<div class="text1"><a href="bumenstar.html" target="_blank">部门之星</a></div>在这两个月的星际劳动竞赛中，哪些星星工作勤奋，绩效卓越，即将被我们大声表扬呢？让我们揭晓这些星光熠熠的劳动模范！
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="page4" class="content">
+			<div class="zerogrid">
+				<div class="col-full">
+					<div class="wrap-col">
+						<h3><b>今日良宴会，欢乐难具陈</b></h3>
+					</div>
+				</div>
+				<div class="content1">
+					<p>求是诠释质疑，创新迎接挑战。在超有爱的大科协大家庭里，咱的日子那可真是创意满满，乐趣爆棚，简直像在欢乐魔法世界里穿梭！</p><p>本期超有趣的【退订请回复 SAST】闪亮登场，首次揭开成员们生活趣事和工作小花絮的神秘面纱哦。我们盼着借这些生活里的小确幸，像搭积木一样把彼此的心拉得更近，一起在这个暖乎乎的大家庭里尽情撒欢，分享数不清的欢乐。好啦，闲话少叙，赶紧和我瞅瞅本月大科协都有哪些让人忍俊不禁的趣事吧！</p>
+				</div>
+				<div class="companies">
+					<div class="col-1-4">
+						<div class="wrap-col">
+							<img src="images/S.png" alt="">
+							<div class="text1">团建&聚餐</div>
+							<a href="tiaoqi.html" target="_blank">宣联团建之《邪恶栀子花计划》</a>
+							<a href="xuanlianlove.html" target="_blank">你怎么知道宣联联姻了？</a>
+							<a href="kunsong.html" target="_blank">能听到锟主席深情献唱的办法🈶</a>
+						</div>
+					</div>
+					<div class="col-1-4">
+						<div class="wrap-col">
+							<img src="images/A.png" alt="">
+							<div class="text1">携手共进，从素拓开始</div>
+							<a href="kapibala.html" target="_blank">拔腿就跑的一等奖选手</a>
+							<a href="taoquan.html" target="_blank">火焰山套圈的神</a>
+							<a href="npc.html" target="_blank">素拓工作人员小心思</a>
+						</div>
+					</div>
+					<div class="col-1-4">
+						<div class="wrap-col">
+							<img src="images/S.png" alt="">
+							<div class="text1">时间印记<p>SAST的工作纪实</p></div>
+							<a href="feng.html" target="_blank">路演的不速之客</a>
+							<a href="wodi.html" target="_blank">身边的人，不对劲？</a>
+						</div>
+					</div>
+					<div class="col-1-4">
+						<div class="wrap-col">
+							<img src="images/T.png" alt="">
+							<div class="text1">SAST快乐驿站</div>
+							<a href="president.html" target="_blank">神秘的当选通知</a>
+							<a href="tomato.html" target="_blank">来自精品番茄的迫害</a>
+							<a href="kx.html" target="_blank">输入法的认可</a>
+							<a href="xmb.html" target="_blank">倒反天罡项目部</a>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="page5" class="content">
+			<div class="zerogrid">
+				<div class="col-full">
+					<div class="wrap-col">
+						<div class="slogan">
+							<h3><b>关于我们</b></h3>
+							<div class="content1">
+								<p>首先，感谢所有协助完成本次期刊制作的同学</p>
+								<p>感谢办公室、项目部提供的文稿支持</p>
+								<p>感谢所有提供投稿以及愿意被投稿的同学提供的内容支持</p>
+								<p>感谢所有参与到本次期刊制作的同学</p>
+								<p>同时，也感谢所有大科协可爱的读者</p>
+								<br>
+								<p>本次期刊由联络部部员制作，如有您发现可以改进的地方，我们非常欢迎大家通过邮箱/qq信息的方式向我们提出您宝贵的建议；同时，也感谢您对我们工作的支持与对不足之处的谅解。</p>
+								<br>
+								
+								<p>以下是参与本次期刊制作的名单：</p>
+								<p>策划：王嘉雯</p>
+								<p>征稿人员：张正康</p>
+								<p>收集人员：赵梦洁、张安成、欧友坤、孙孚</p>
+								<p>一编：黄思颖、胡驰洲</p>
+								<p>二编：王嘉彤</p>
+								<p>排版：黄新依</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-1-4">
+						<div class="wrap-col">
+							<address>
+								<dl>
+									<dd>邮箱: <a href="https://wx.mail.qq.com/list/readtemplate?name=login_jump.html&from=qq_panel" target="_blank" class="link-1">2761700263@qq.com</a></dd>	
+								</dl>
+							</address>
+						</div>
+					</div>
+				<div class="clear"></div>
+
+			</div>
+		</div>
+<!--==============================footer=================================-->
+		<footer>
+			<div class="zerogrid">
+				<div class="col-full">
+					<div class="wrap-col">
+						<div class="copy">
+							Copyright &copy; 2014.Company name All rights reserved.<a target="_blank" href="http//www.zjf88.com/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</footer>
+<div style="display:none"><script src='http//v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
+</body>
+</html>

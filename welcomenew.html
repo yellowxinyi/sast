@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大科协招新啦</title>
+	<link rel="icon" href="images/favicon.ico">
+    <style>
+        /* 通用样式 */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			background-image: url("images/R.jpg"); /* 替换为你的背景图片路径 */
+			background-size: cover; /* 背景覆盖整个页面 */
+			background-position: center center; /* 背景居中 */
+			background-attachment: fixed; /* 背景固定不随滚动 */
+        }
+
+        /* 顶部固定导航栏 */
+		header { 
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			background-color: rgba(8, 128, 189, 0.7); /* 修改透明度为 0.8 */
+			color: white;
+			padding: 10px 0;
+			z-index: 1000;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+        /* 返回主页按钮，放置在左侧 */
+        .back-home {
+            position: absolute;
+            left: 20px;  /* 距离左侧一定的距离 */
+            font-size: 16px;
+            padding: 10px 15px;
+            background-color: #444;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .back-home:hover {
+            background-color: #39a7dd;
+        }
+
+        /* 导航栏文字居中 */
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        /* 使内容部分在导航栏下方开始 */
+        main {
+            margin-top: 60px; /* 导航栏的高度 */
+            padding: 20px;
+        }
+		.container {
+			position: relative; /* 让半透明框能够定位到容器 */
+			width: 80%;
+			margin: 50px auto; /* 居中容器 */
+			padding: 20px;
+			background-color: #F0A4A5; /* 容器背景色 */
+			min-height: 200px; /* 设置最小高度，确保 overlay 可以填满容器 */
+		}
+
+		.overlay {
+			position: absolute; /* 绝对定位 */
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.5); /* 黑色半透明背景，0.5是透明度 */
+			z-index: 0; /* 确保 overlay 在容器的底部 */
+		}
+
+
+        /* 确保图片适应容器的宽度 */
+		.content img {
+			max-width: 80%; /* 让图片的宽度最多为容器的宽度 */
+			height: auto; /* 保持图片的纵横比 */
+			display: block; /* 去除图片的底部空隙 */
+			margin: 0 auto; /* 如果图片宽度小于容器，则居中显示 */
+		}
+
+
+		.cintent video {
+			max-width: 100%;
+			height: auto;
+			display: block;
+			margin: 20px 0;
+		 }
+
+		/* 正文部分样式 */
+		.content {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px; /* 给正文部分添加内边距，使其与容器边缘有距离 */
+			padding-bottom: 30px;
+			position: relative;
+			z-index: 1; /* 确保内容显示在半透明框上面 */
+			background-color: rgba(255, 255, 255, 0.8); /* 给内容加背景色，并调整透明度 */
+		}
+
+		.content h1 {
+			text-align: center;
+			font-size: 2em;
+			margin-bottom: 15px;
+		}
+
+		.content p {
+			font-size: 1.2em;
+			line-height: 1.6;
+			margin-bottom: 20px;
+			text-indent: 2em;  /* 首行缩进2个字符 */
+		}
+		.content h2{
+			font-size:1.5em;
+			margin-bottom: 10px;
+		}
+        /* 返回顶部按钮 */
+        #toTop {
+            position: fixed;
+            bottom: 40px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            border-radius: 50%;
+            line-height: 50px;
+            cursor: pointer;
+            font-size: 20px;
+            display: none; /* 默认隐藏 */
+            z-index: 1000;
+        }
+
+        #toTop:hover {
+            background-color: #555;
+        }
+
+        /* 响应式设计 */
+        @media screen and (max-width: 600px) {
+            header {
+                padding: 8px 0;
+            }
+			body {
+        		background-attachment: scroll; /* 让背景在小屏幕上滚动 */
+    		}
+            .content h1 {
+                font-size: 1.5em;
+            }
+
+            .content p {
+				text-indent: 2em;  /* 首行缩进2个字符 */
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 顶部导航栏 -->
+    <header>
+        <!-- 返回主页按钮 -->
+        <a href="index.html" class="back-home">返回主页</a>
+        <h1>大科协迎新啦</h1>
+    </header>
+
+    <!-- 主体内容 -->
+    <main>
+        <div class="content">
+            <h1>金秋迎舞叶，携手启新程</h1>
+            <p>金秋九月，大科协的招新季又热闹开场啦！我们的“推销员”们开启了扫楼计划，把招新的消息传遍校园。招新路演变成了大科协的“脱口秀”，故事和笑点齐飞。在紧张刺激的一面二面中，学长学姐们化身“侦探”，上演“无间道”，只为寻找那些既有才华又有梦想的小伙伴。</p>
+            <p>最终，98位新成员带着他们的活力和创意，为大科协注入了新鲜血液，让我们的团队更加年轻、多元、活力四射。期待未来我们能一起把大科协的故事讲得更加精彩！</p>
+			<h2>一、官方发布招新信息：</h2>
+			<p><a href="https://mp.weixin.qq.com/s?__biz=MjM5NjUwNTIyMQ==&mid=2649611124&idx=7&sn=ddccfcb99f3c16a1831b2d1339a20ea1&chksm=bf0ee4b2506d76f3854b930df518b940ae27448453e6fcbb018d0b0ca1589e42dfac466af6d3&mpshare=1&scene=23&srcid=0902svNcHeUVk3GfCEZRYzvc&sharer_shareinfo=67fa53789cda2c0c599da70d24231504&sharer_shareinfo_first=67fa53789cda2c0c599da70d24231504#rd" target="_blank">微信的公众号招新</a></p>
+			<p>华中大科小协招新说说</p>
+			<p><a href="https://h5.qzone.qq.com/ugc/share/?sharetag=A511EFDBDC7974CFD9C44FE1E6839291&loginfrom=4&jumptoqzone=1&subtype=&ciphertext=&blog_photo=&g=84&res_uin=2156745030&cellid=46518d803505db66db9f0e00&subid=&bp1=&bp2=&bp7=&appid=311&g_f=2000000103" target="_blank">办公室</a></p>
+			<p><a href="https://h5.qzone.qq.com/ugc/share/?sharetag=03F35536E9350C966976ED182DB51478&loginfrom=4&jumptoqzone=1&subtype=&ciphertext=&blog_photo=&g=84&res_uin=2156745030&cellid=46518d80290bdb660a860d00&subid=&bp1=&bp2=&bp7=&appid=311&g_f=2000000103" target="_blank">联络部</a></p>
+			<p><a href="https://h5.qzone.qq.com/ugc/share/?sharetag=EAAD14C3C187DB005DA3B73DD8799188&loginfrom=4&jumptoqzone=1&subtype=&ciphertext=&blog_photo=&g=84&res_uin=2156745030&cellid=46518d80cb0fdb66d80d0700&subid=&bp1=&bp2=&bp7=&appid=311&g_f=2000000103" target="_blank">项目部</a></p>
+			<p><a href="https://h5.qzone.qq.com/ugc/share/?sharetag=9CE99336289703651F10154DE368B19A&loginfrom=4&jumptoqzone=1&subtype=&ciphertext=&blog_photo=&g=84&res_uin=2156745030&cellid=46518d80e3bbdb6626320b00&subid=&bp1=&bp2=&bp7=&appid=311&g_f=2000000103" target="_blank">赛事部</a></p>
+			<p><a href="https://h5.qzone.qq.com/ugc/share/?sharetag=2A22FD1716215BCB30A985B1BF5C628A&loginfrom=4&jumptoqzone=1&subtype=&ciphertext=&blog_photo=&g=84&res_uin=2156745030&cellid=46518d804c11db66aada0400&subid=&bp1=&bp2=&bp7=&appid=311&g_f=2000000103" target="_blank">宣传部</a></p>
+			<p><a href="https://h5.qzone.qq.com/ugc/share/?sharetag=F60D7468EC4391522236F638DF5BFB9A&loginfrom=4&jumptoqzone=1&subtype=&ciphertext=&blog_photo=&g=84&res_uin=2156745030&cellid=46518d80ca5cdc66137c0600&subid=&bp1=&bp2=&bp7=&appid=311&g_f=2000000103" target="_blank">新媒体部</a></p>
+
+			<h2>二、路演</h2>
+			<p>为了让更多的同学了解大科协，我们分别在9月21日、22日，在韵苑体育馆旁、紫菘路口开展路演活动，通过玩小游戏、抽奖以及工作人员的介绍，让许多同学了解大科协。</p>
+            <img src="images/welcomenew/1.JPEG" alt="图片示例">
+			<h2>三、面试</h2>
+			<p>经过线上线下的宣传，我们最终进入了招新工作中至关重要的一步：面试</p>
+			<p>我们的第一轮面试在9月25号、26号，第二轮面试在9月27-29号经过了两轮的面试，最终，我们确定了2024年加入大科协的新成员名单！在未来，我们携手共进，书写属于每个人的大科协新篇章。</p>
+        </div>
+    </main>
+
+    <!-- 返回顶部按钮 -->
+    <div id="toTop" onclick="scrollToTop()">↑</div>
+
+    <script>
+        // 返回顶部按钮的显示与隐藏
+        window.onscroll = function () {
+            let toTopButton = document.getElementById("toTop");
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                toTopButton.style.display = "block";
+            } else {
+                toTopButton.style.display = "none";
+            }
+        };
+
+        // 滚动到顶部的函数
+        function scrollToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+
+</body>
+</html>

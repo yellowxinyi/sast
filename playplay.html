@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>素质拓展</title>
+	<link rel="icon" href="images/favicon.ico">
+    <style>
+        /* 通用样式 */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			background-image: url("images/R.jpg"); /* 替换为你的背景图片路径 */
+			background-size: cover; /* 背景覆盖整个页面 */
+			background-position: center center; /* 背景居中 */
+			background-attachment: fixed; /* 背景固定不随滚动 */
+        }
+
+        /* 顶部固定导航栏 */
+		header { 
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			background-color: rgba(8, 128, 189, 0.7); /* 修改透明度为 0.8 */
+			color: white;
+			padding: 10px 0;
+			z-index: 1000;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+        /* 返回主页按钮，放置在左侧 */
+        .back-home {
+            position: absolute;
+            left: 20px;  /* 距离左侧一定的距离 */
+            font-size: 16px;
+            padding: 10px 15px;
+            background-color: #39a7dd;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .back-home:hover {
+            background-color: #555;
+        }
+
+        /* 导航栏文字居中 */
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        /* 使内容部分在导航栏下方开始 */
+        main {
+            margin-top: 60px; /* 导航栏的高度 */
+            padding: 20px;
+        }
+		.container {
+			position: relative; /* 让半透明框能够定位到容器 */
+			width: 80%;
+			margin: 50px auto; /* 居中容器 */
+			padding: 20px;
+			background-color: #F0A4A5; /* 容器背景色 */
+			min-height: 200px; /* 设置最小高度，确保 overlay 可以填满容器 */
+		}
+
+		.overlay {
+			position: absolute; /* 绝对定位 */
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.5); /* 黑色半透明背景，0.5是透明度 */
+			z-index: 0; /* 确保 overlay 在容器的底部 */
+		}
+
+
+        /* 图片样式 */
+        /* 确保图片适应容器的宽度 */
+		.content img {
+			max-width: 80%; /* 让图片的宽度最多为容器的宽度 */
+			height: auto; /* 保持图片的纵横比 */
+			display: block; /* 去除图片的底部空隙 */
+			margin: 0 auto; /* 如果图片宽度小于容器，则居中显示 */
+		}
+
+
+		.cintent video {
+			max-width: 100%;
+			height: auto;
+			display: block;
+			margin: 20px 0;
+		 }
+
+		/* 正文部分样式 */
+		.content {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px; /* 给正文部分添加内边距，使其与容器边缘有距离 */
+			padding-bottom: 30px;
+			position: relative;
+			z-index: 1; /* 确保内容显示在半透明框上面 */
+			background-color: rgba(255, 255, 255, 0.8); /* 给内容加背景色，并调整透明度 */
+		}
+
+		.content h1 {
+			text-align: center;
+			font-size: 2em;
+			margin-bottom: 15px;
+		}
+
+		.content p {
+			font-size: 1.2em;
+			line-height: 1.6;
+			margin-bottom: 20px;
+			text-indent: 2em;  /* 首行缩进2个字符 */
+		}
+		.content h2{
+			font-size:1.5em;
+			margin-bottom: 10px;
+		}
+		.content h3{
+			font-size:1.3em;
+			margin-bottom: 10px;
+		}
+		/* 图片容器使用 Flexbox 布局 */
+		.image-container {
+			display: flex; /* 激活 Flexbox 布局 */
+			justify-content: space-between; /* 在容器内让图片间距均匀 */
+			gap: 5px; /* 图片之间的间距 */
+			margin: 20px 0; /* 给图片容器上下加点间距 */
+		}
+
+		/* 图片样式 */
+		.image {
+			max-width: 55%; /* 图片宽度为容器的48%，让它们并排 */
+			height: auto;
+			display: block;
+			border-radius: 20px; /* 给图片加圆角 */
+		}
+		/* 单独设置特殊图片的样式 */
+		.special-img {
+			max-width: 60%; /* 图片宽度为容器的80% */
+			border-radius: 10px; /* 圆角 */
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 添加阴影效果 */
+			margin: 20px 0; /* 上下外边距 */
+			display: block; /* 使图片成为块级元素 */
+			margin-left: auto;
+			margin-right: auto; /* 居中显示 */
+		}
+        /* 返回顶部按钮 */
+        #toTop {
+            position: fixed;
+            bottom: 40px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            border-radius: 50%;
+            line-height: 50px;
+            cursor: pointer;
+            font-size: 20px;
+            display: none; /* 默认隐藏 */
+            z-index: 1000;
+        }
+
+        #toTop:hover {
+            background-color: #555;
+        }
+
+        /* 响应式设计 */
+        @media screen and (max-width: 600px) {
+            header {
+                padding: 8px 0;
+            }
+			body {
+        		background-attachment: scroll; /* 让背景在小屏幕上滚动 */
+    		}
+            .content h1 {
+                font-size: 1.5em;
+            }
+
+            .content p {
+				text-indent: 2em;  /* 首行缩进2个字符 */
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 顶部导航栏 -->
+    <header>
+        <!-- 返回主页按钮 -->
+        <a href="index.html" class="back-home">返回主页</a>
+        <h1>素质拓展</h1>
+    </header>
+
+    <!-- 主体内容 -->
+    <main>
+        <div class="content">
+            <h1>———青梧叶舞，英才齐聚——— </h1>
+            <p>号外！号外！11月9日大学生科学技术协会素质拓展活动于中心操场顺利举行圆满结束。</p>
+			<div class="special-img">
+            <img src="images/playplay/1.png"  alt="">
+			</div>
+          <p>本次素拓活动依托于西游记中唐僧师徒西天取经的故事。来自不同部门的大科协小伙伴们组成不同的小组，化身“唐僧师徒”，历经“九九八十一难”，最终到达”西天”取得“真经”。</p>
+			<h2>#精彩回放#</h2>
+		  <h3>地点：东土大唐（中操）</h3>
+			<div class="image-container">
+				<div class="image">
+					<img src="images/playplay/2.png"  alt="图片1">
+				</div>
+				<div class="image">
+					<img src="images/playplay/3.png"  alt="图片2">
+				</div>
+			</div>
+			<p>“我们背对背拥抱~”</p>
+			<h3>地点：盘丝洞（醉晚亭）</h3>
+			<img src="images/playplay/4.png"  alt=""> 
+			<p>西游记快穿之甄嬛传滴血认亲：我穿书了，穿成了甄嬛传中的恶毒女炮灰瓜尔佳氏，我回到了滴血认亲的那一天，如今我手握剧本，我还是要告发熹贵妃私通，看我如何称霸后宫</p>
+			<h3>地点：女儿国（梧桐语）</h3>
+			<img src="images/playplay/5.png"  alt=""> 
+			<p>奥特曼：你相信光吗？</p><p>Sasters：大科协之光闪耀梧桐语</p>
+			<h3>地点：火焰山（大活）</h3>
+			<img src="images/playplay/6.png"  alt=""> 
+			<p>Saster：小小火焰山，拿下！</p><p>铁扇×锟：糟糕，让你们发现了bug</p>
+			<h3>地点：平顶山（校史馆）</h3>
+			<img src="images/playplay/7.png"  alt=""> 
+			<p>“速通你画我猜，so easy！”</p>
+			<h3>地点：通天河（图书馆）</h3>
+			<p>（*卧底任务支线）</p>
+			<div class="image-container">
+				<div class="image">
+					<img src="images/playplay/8.png"  alt="图片3">
+				</div>
+				<div class="image">
+					<img src="images/playplay/9.png"  alt="图片4">
+				</div>
+			</div>
+			<p>Saster：我们五个人的友谊坚不可摧！</p>
+			<p>狼：嘻嘻嘻，你们五个人的友谊坚不可摧？里面有一个人可……</p>
+			<h3>地点：南大门</h3>
+			<img src="images/playplay/10.png"  alt=""> 
+			<p>“我们huster都是宰相gin苗~ ”</p>
+			<h3>地点：西天（中操）</h3>
+			<img src="images/playplay/11.png"  alt=""> 
+			<p>Saster：我们很有默契！</p>
+			<div class="image-container">
+				<div class="image">
+					<img src="images/playplay/12.png"  alt="图片5">
+				</div>
+				<div class="image">
+					<img src="images/playplay/13.png"  alt="图片6">
+				</div>
+			</div>
+			<p>NPC：是的，我们很有默契</p>
+			<h3>最后，素质拓展完美收官！</h3>
+			<img src="images/playplay/14.png"  alt=""> 
+			<p>We are family!</p>
+			<h3>*npc彩蛋：</h3>
+			<p>Kunkun公主</p>
+			<img src="images/playplay/15.png"  alt=""> 
+			<p>辟谣：部门内部很和谐</p>
+			<img src="images/playplay/16.png"  alt=""> 
+			<p>温馨的大家庭~</p>
+			<img src="images/playplay/17.png"  alt=""> 
+			<img src="images/playplay/18.png"  alt=""> 
+			<h3>妖魔鬼怪一家亲</h3>
+        </div>
+    </main>
+
+    <!-- 返回顶部按钮 -->
+    <div id="toTop" onclick="scrollToTop()">↑</div>
+
+    <script>
+        // 返回顶部按钮的显示与隐藏
+        window.onscroll = function () {
+            let toTopButton = document.getElementById("toTop");
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                toTopButton.style.display = "block";
+            } else {
+                toTopButton.style.display = "none";
+            }
+        };
+
+        // 滚动到顶部的函数
+        function scrollToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+
+</body>
+</html>

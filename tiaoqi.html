@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>邪恶栀子花</title>
+	<link rel="icon" href="images/favicon.ico">
+    <style>
+        /* 通用样式 */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			background-image: url("images/background2.jpg"); /* 替换为你的背景图片路径 */
+			background-size: cover; /* 背景覆盖整个页面 */
+			background-position: center center; /* 背景居中 */
+			background-attachment: fixed; /* 背景固定不随滚动 */
+        }
+
+        /* 顶部固定导航栏 */
+		header {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			background-color: rgba(237, 152, 27, 0.7); /* 修改透明度为 0.8 */
+			color: white;
+			padding: 10px 0;
+			z-index: 1000;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+        /* 返回主页按钮，放置在左侧 */
+        .back-home {
+            position: absolute;
+            left: 20px;  /* 距离左侧一定的距离 */
+            font-size: 16px;
+            padding: 10px 15px;
+            background-color: #f5bd5c;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .back-home:hover {
+            background-color: #555;
+        }
+
+        /* 导航栏文字居中 */
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        /* 使内容部分在导航栏下方开始 */
+        main {
+            margin-top: 60px; /* 导航栏的高度 */
+            padding: 20px;
+        }
+		.container {
+			position: relative; /* 让半透明框能够定位到容器 */
+			width: 80%;
+			margin: 50px auto; /* 居中容器 */
+			padding: 20px;
+			background-color: #F0A4A5; /* 容器背景色 */
+			min-height: 200px; /* 设置最小高度，确保 overlay 可以填满容器 */
+		}
+
+		.overlay {
+			position: absolute; /* 绝对定位 */
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.5); /* 黑色半透明背景，0.5是透明度 */
+			z-index: 0; /* 确保 overlay 在容器的底部 */
+		}
+
+
+        /* 图片样式 */
+        /* 确保图片适应容器的宽度 */
+		.content img {
+			max-width: 80%; /* 让图片的宽度最多为容器的宽度 */
+			height: auto; /* 保持图片的纵横比 */
+			display: block; /* 去除图片的底部空隙 */
+			margin: 0 auto; /* 如果图片宽度小于容器，则居中显示 */
+		}
+
+
+		.cintent video {
+			max-width: 100%;
+			height: auto;
+			display: block;
+			margin: 20px 0;
+		 }
+
+		/* 正文部分样式 */
+		.content {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px; /* 给正文部分添加内边距，使其与容器边缘有距离 */
+			padding-bottom: 30px;
+			position: relative;
+			z-index: 1; /* 确保内容显示在半透明框上面 */
+			background-color: rgba(255, 255, 255, 0.8); /* 给内容加背景色，并调整透明度 */
+		}
+
+		.content h1 {
+			text-align: center;
+			font-size: 2em;
+			margin-bottom: 15px;
+		}
+
+		.content p {
+			font-size: 1.2em;
+			line-height: 1.6;
+			margin-bottom: 20px;
+			text-indent: 2em;  /* 首行缩进2个字符 */
+		}
+		.content p1 {
+			font-size: 1.2em;
+			line-height: 1.6;
+			margin-bottom: 20px;
+			text-align: center;
+		}
+		.content h2{
+			font-size:1.5em;
+			margin-bottom: 10px;
+		}
+		/* 图片容器使用 Flexbox 布局 */
+		.image-container {
+			display: flex; /* 激活 Flexbox 布局 */
+			justify-content: space-between; /* 在容器内让图片间距均匀 */
+			gap: 20px; /* 图片之间的间距 */
+			margin: 20px 0; /* 给图片容器上下加点间距 */
+		}
+
+		/* 图片样式 */
+		.image {
+			max-width: 48%; /* 图片宽度为容器的48%，让它们并排 */
+			height: auto;
+			display: block;
+			border-radius: 10px; /* 给图片加圆角 */
+		}
+		.special-img {
+			max-width: 50%; /* 图片宽度为容器的80% */
+			border-radius: 10px; /* 圆角 */
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 添加阴影效果 */
+			margin: 20px 0; /* 上下外边距 */
+			display: block; /* 使图片成为块级元素 */
+			margin-left: auto;
+			margin-right: auto; /* 居中显示 */
+		}
+        /* 返回顶部按钮 */
+        #toTop {
+            position: fixed;
+            bottom: 40px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            border-radius: 50%;
+            line-height: 50px;
+            cursor: pointer;
+            font-size: 20px;
+            display: none; /* 默认隐藏 */
+            z-index: 1000;
+        }
+
+        #toTop:hover {
+            background-color: #555;
+        }
+
+        /* 响应式设计 */
+        @media screen and (max-width: 600px) {
+            header {
+                padding: 8px 0;
+            }
+			body {
+        		background-attachment: scroll; /* 让背景在小屏幕上滚动 */
+    		}
+            .content h1 {
+                font-size: 1.5em;
+            }
+
+            .content p {
+				text-indent: 2em;  /* 首行缩进2个字符 */
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 顶部导航栏 -->
+    <header>
+        <!-- 返回主页按钮 -->
+        <a href="index.html" class="back-home">返回主页</a>
+        <h1>邪恶栀子花跳棋</h1>
+    </header>
+
+    <!-- 主体内容 -->
+    <main>
+        <div class="content">
+            <h1>宣联团建之跳棋大战</h1>
+            <p>邪恶栀子花可以是这样的</p>
+			<div class="special-img">
+				<img src="images/tiaoqi/1.png" alt="">
+			</div>
+			<p>也可以是这样的</p>
+			<div class="special-img">
+				<img src="images/tiaoqi/2.png" alt="">
+			</div>
+            <p>事情要从那天联络部和宣传部的联合团建开始说起。</p>
+			<p>10月25日，联络部与宣传部在一个轰趴馆联合开展了一次团建活动，在团建之末，作案人——宣传部的吴霁函拿出一副跳棋。棋局共有6人参与，事件的主要对抗来自：联络部-曾逸舟vs宣传部-吴霁函（下图红棋——吴霁函，橙棋——曾逸舟）</p>
+			<p>作案人开局便表示</p>
+			<p><b>“自己是第一次玩跳棋”</b></p>
+			<p>邪恶栀子花计划由此展开。</p>
+			<p>随着时间推移，各色棋子在棋盘中间形成了错综复杂的“路况”，但受害人逸舟发现，自己的棋子怎么也无法跳入对面的区域，因为吴霁函以“要稳住军心”为由，每次只跳出一颗非内部棋子，造成了针对逸舟一人的“路况”堵塞。</p>
+			<p>吴霁函选手的不按常理出牌也引来了其他选手们的“指导”与抱怨——“你从这里！再走这里！不就可以跳很远吗？！”“哎呀你怎么还不出来”“我来你这路过一下都被堵这么久...” 而逸舟选手则采取了杀敌一千自损八百的策略，声称堵着也不会给对方铺路，两人久久僵持不下。</p>
+			<img src="images/tiaoqi/3.jpg" alt="">
+			<img src="images/tiaoqi/4.png" alt="">
+			<p>害人终害已，邪恶栀子花计划导致曾逸舟选手成为倒数第二位完成棋局的参赛者，但吴霁函选手也成了全场唯一没有完成棋局的人。（如下图所示，红棋——吴霁函，橙棋——曾逸舟）</p>
+			<img src="images/tiaoqi/5.png" alt="">
+			<p><b>谁说这跳棋恶心的，这跳棋可太棒了!</b></p>
+			<p>记者而后分别对受害人和作案人进行了采访</p>
+			<h2> 受害人：可怜🥺</h2>
+			<img src="images/tiaoqi/6.png" alt="">
+			<h2>  作案人：我可以用AI吗？😗</h2>
+			<img src="images/tiaoqi/7.png" alt="">
+			<p><a href="tiaoqi_plus.html" target="_blank">番外</a></p>
+        </div>
+    </main>
+
+    <!-- 返回顶部按钮 -->
+    <div id="toTop" onclick="scrollToTop()">↑</div>
+
+    <script>
+        // 返回顶部按钮的显示与隐藏
+        window.onscroll = function () {
+            let toTopButton = document.getElementById("toTop");
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                toTopButton.style.display = "block";
+            } else {
+                toTopButton.style.display = "none";
+            }
+        };
+
+        // 滚动到顶部的函数
+        function scrollToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+
+</body>
+</html>
